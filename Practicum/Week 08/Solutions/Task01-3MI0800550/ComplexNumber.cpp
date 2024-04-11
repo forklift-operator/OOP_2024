@@ -41,6 +41,16 @@ const double ComplexNumber::getImag()
     return this->b;
 }
 
+void ComplexNumber::SetReal(const double real)
+{
+    this->a = real;
+}
+
+void ComplexNumber::SetImag(const double imag)
+{
+    this->b = imag;
+}
+
 double ComplexNumber::AbsComplex()
 {
     return sqrt(this->a * this->a + this->b * this->b);

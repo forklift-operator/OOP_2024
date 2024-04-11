@@ -41,6 +41,8 @@ public:
 
     const double getReal();
     const double getImag();
+    void SetReal(const double real);
+    void SetImag(const double imag);
 
 private:
     double a, b;
