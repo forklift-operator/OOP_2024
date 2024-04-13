@@ -1,4 +1,4 @@
-#pragma once    
+#pragma once
 #include "Person.hpp"
 
 const size_t MAX_PEOPLE_ON_TABLE = 5;
@@ -12,13 +12,12 @@ private:
 
 public:
     Person people[5];
-    void AddPerson(const Person& person);
-    void RemovePerson(const Person& person);
+    void AddPerson(const Person &person);
+    void RemovePerson(const Person &person);
     unsigned GetRemainingSeats();
 
-    Table(/* args */);
-    Table(const char* name, const unsigned min_age);
-    ~Table(){delete[] name;};
-
-    
+    Table();
+    Table(const char *name, const unsigned min_age);
+    Table(const char *name, const unsigned min_age, const Person *people, const size_t num_of_people);
+    ~Table() { delete[] name; };
 };

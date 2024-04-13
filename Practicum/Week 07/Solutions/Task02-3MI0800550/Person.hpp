@@ -16,7 +16,7 @@ enum class Status
     MARRIED
 };
 
-enum class Personstatus
+enum class Wedding_Status
 {
     GROOM,
     BRIDE,
@@ -33,7 +33,7 @@ private:
     unsigned age;
     Gender gender;
     Status status;
-    Personstatus person_status;
+    Wedding_Status wedding_status;
 
     void copy(const Person &other)
     {
@@ -44,7 +44,7 @@ private:
         gender = other.gender;
         id = other.id;
         status = other.status;
-        person_status = other.person_status;
+        wedding_status = other.wedding_status;
     }
 
     void free()
@@ -56,13 +56,14 @@ public:
     size_t person_id;
 
     const char *GetName() const;
-    unsigned GetAge();
+    unsigned GetAge() const;
     Gender GetGender();
     Status GetStatus();
+    Wedding_Status GetWeddingStatus();
     void SetStatus(Status new_status);
 
     Person();
-    Person(const char *name, unsigned age, Gender gender, Status status, Personstatus person_status);
+    Person(const char *name, unsigned age, Gender gender, Status status, Wedding_Status wedding_status);
     Person &operator=(const Person &other);
     bool operator==(const Person &other);
     Person(const Person &other);

@@ -7,19 +7,19 @@
 int main()
 {
 
-    Person p1("ivan", 23, Gender::MALE, Status::SINGLE, Personstatus::GUEST);
-    Person p2("ema", 44, Gender::FEMALE, Status::SINGLE, Personstatus::GUEST);
-    Person p3("gergi", 17, Gender::MALE, Status::SINGLE, Personstatus::GUEST);
-    Person p4("maria", 17, Gender::FEMALE, Status::SINGLE, Personstatus::GUEST);
-    Person p5("stoqn", 17, Gender::MALE, Status::SINGLE, Personstatus::GUEST);
+    Person p1("ivan", 23, Gender::MALE, Status::SINGLE, Wedding_Status::GROOM);
+    Person p2("ema", 44, Gender::FEMALE, Status::SINGLE, Wedding_Status::BRIDE);
+    Person p3("gergi", 17, Gender::MALE, Status::SINGLE, Wedding_Status::GUEST);
+    Person p4("maria", 17, Gender::FEMALE, Status::SINGLE, Wedding_Status::GUEST);
+    Person p5("stoqn", 17, Gender::MALE, Status::SINGLE, Wedding_Status::GUEST);
 
     Person people[5] = {p1, p2, p3, p4, p5};
 
-    Table t("ADULTS", 99);
+    Table t("ADULTS", 18, people, 5);
 
-    t.AddPerson(p1);
-    t.AddPerson(p2);
-    t.AddPerson(p3);
+    // t.AddPerson(p1);
+    // t.AddPerson(p2);
+    // t.AddPerson(p3);
 
     Wedding w("Bulgaria");
     w.AddTable(t);
