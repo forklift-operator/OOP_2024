@@ -1,7 +1,7 @@
 #ifndef __TEACHER_HPP
 #define __TEACHER_HPP
 
-#include "../Person/Person.h"
+#include "../Person/Person.hpp"
 #include <cstddef>
 
 class Teacher : public Person{
