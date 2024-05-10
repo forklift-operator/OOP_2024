@@ -30,4 +30,8 @@ void Triangle::Print(std::ostream &os)
     b.Print(os);
     os << "C: ";
     c.Print(os);
+}
+Figure *Triangle::clone()
+{
+    return new Triangle(*this);
 };

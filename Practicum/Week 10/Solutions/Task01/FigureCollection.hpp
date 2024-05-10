@@ -1,20 +1,22 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "Figure.hpp"
 
-class FigureCollection : public Figure
+
+class FigureCollection
 {
 private:
-    Figure **figures;
-    size_t size = 0, cap;
+    std::vector<Figure *> figures;
 
-    void doubleCap();
-    void copy();
-    void free();
 public:
-    FigureCollection() : cap(1), size(0){};
-    void addFigure(const Figure *figure);
-    void removeFigure(Figure figure);
+    FigureCollection() = default;
+
+    void addFigure(const Figure &figure);
+    void removeFigure(const Figure &figure);
     void clear();
+
+    void Print(std::ostream &os);
+
     ~FigureCollection();
 };

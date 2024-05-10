@@ -34,3 +34,8 @@ void Quadrilateral::Print(std::ostream& os)
     os << "C:"; C.Print(os);
     os << "D:"; D.Print(os);
 }
+
+Figure *Quadrilateral::clone()
+{
+    return new Quadrilateral(*this);
+}

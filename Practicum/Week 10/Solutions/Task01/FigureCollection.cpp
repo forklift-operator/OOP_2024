@@ -1,40 +1,44 @@
 #include "FigureCollection.hpp"
 
-void FigureCollection::doubleCap()
+void FigureCollection::addFigure(const Figure &figure)
 {
-    cap *= 2;
-    Figure **temp = figures; 
-    figures = new Figure *[cap];
-    for (size_t i = 0; i < size; i++)
-    {
-        figures[i] = temp[i];
-    }
+    figures.push_back((Figure *)&figure);
 }
 
-void FigureCollection::free()
+void FigureCollection::removeFigure(const Figure &figure)
 {
-    delete[] figures;
-}
-
-void FigureCollection::addFigure(const Figure *figure)
-{
-    size++;
-    if (size > cap)
+    for (Figure *fig : figures)
     {
-        cap *= 2;
-        figures = new Figure *[cap];
+        if (fig == (Figure *)&figure)
+        {
+            delete fig;
+        }
     }
 }
 
 void FigureCollection::clear()
 {
-    for (size_t i = 0; i < size; i++)
+    for (size_t i = 0; i < figures.size(); i++)
     {
-        figures[i] = nullptr;
+        delete figures[i];
+    }
+}
+
+void FigureCollection::Print(std::ostream &os)
+{
+    size_t count = 1;
+    for (Figure *fig : figures)
+    {
+        os << "**** " << count << " ****" << std::endl;
+        fig->Print(os);
+        count++;
     }
 }
 
 FigureCollection::~FigureCollection()
 {
-    free();
+    for (size_t i = 0; i < figures.size(); i++)
+    {
+        delete figures[i];
+    }
 }

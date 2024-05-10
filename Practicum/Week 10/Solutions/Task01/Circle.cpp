@@ -22,3 +22,8 @@ void Circle::Print(std::ostream &out)
     this->center.Print(out);
     out << "Radius: " << this->radius;
 }
+
+Figure *Circle::clone()
+{
+    return new Circle(*this);
+}

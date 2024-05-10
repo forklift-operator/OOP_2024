@@ -15,6 +15,8 @@ public:
     double GetArea() const;
     double GetPerimeter() const;
     void Print(std::ostream &os);
+
+    Figure* clone() override;
     
     ~Triangle() = default;
 };

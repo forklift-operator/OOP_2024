@@ -17,5 +17,7 @@ public:
     virtual double GetPerimeter() const;
     void Print(std::ostream &os);
 
+    Figure* clone() override;
+
     ~Quadrilateral() = default;
 };

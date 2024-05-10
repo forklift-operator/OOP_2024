@@ -9,11 +9,13 @@ private:
     double radius;
 
 public:
-    Circle()=default;
+    Circle() = default;
     Circle(const Point center, const double radius);
     virtual double GetArea() const;
     virtual double GetPerimeter() const;
     void Print(std::ostream &os);
 
-    ~Circle(){};
+    Figure *clone() override;
+
+    ~Circle() = default;
 };
