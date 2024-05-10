@@ -8,7 +8,7 @@ class FigureCollection
 {
 private:
     std::vector<Figure *> figures;
-
+    const char* CheckType(FIGURE_TYPE type);
 public:
     FigureCollection() = default;
 

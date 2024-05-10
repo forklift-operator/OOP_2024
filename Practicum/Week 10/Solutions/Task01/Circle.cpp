@@ -20,7 +20,7 @@ void Circle::Print(std::ostream &out)
 {
     out << "Center: " ;
     this->center.Print(out);
-    out << "Radius: " << this->radius;
+    out << "Radius: " << this->radius << std::endl;
 }
 
 Figure *Circle::clone()

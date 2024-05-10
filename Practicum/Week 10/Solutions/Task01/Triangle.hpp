@@ -9,7 +9,9 @@ private:
     Point b;
     Point c;
 
+    FIGURE_TYPE type = FIGURE_TYPE::Triangle;
 public:
+    FIGURE_TYPE GetType() const {return this->type;};
     Triangle(){};
     Triangle(Point a, Point b, Point c);
     double GetArea() const;
