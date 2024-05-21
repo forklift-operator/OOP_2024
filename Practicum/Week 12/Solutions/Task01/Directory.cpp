@@ -38,14 +38,18 @@ void Directory::display(int indent)
 size_t Directory::getFilesCount() const
 {
     size_t total_files = 0;
-    for(Entity* ent : fd){
-        total_files+=ent->getFilesCount();
+    for (Entity *ent : fd)
+    {
+        total_files += ent->getFilesCount();
     }
     return total_files;
 }
 
 Entity *Directory::find(const std::string &c_name)
 {
+    if (this->getName() == c_name)
+        return this;
+
     Entity *found = nullptr;
 
     for (Entity *ent : fd)

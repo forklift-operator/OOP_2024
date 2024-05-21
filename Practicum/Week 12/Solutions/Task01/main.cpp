@@ -36,7 +36,7 @@ int main()
     f.addEntity(foldptr2);
     f.display();
 
-    Entity* d = f.find("a");
+    Entity* d = f.find("fold2");
     std::cout << d->getName() << std::endl;
     std::cout << f.getSize()<< " Bytes" << std::endl;
     std::cout << f.getFilesCount() << " Files" << std::endl;
